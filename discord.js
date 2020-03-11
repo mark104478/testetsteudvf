@@ -30,7 +30,6 @@ const Debug = require('debug')
 const Discord = require('discord.js')
 const ManagedGuild = require('./guild.js')
 const { schemes, colors, colorTitle, colorToEnglish } = require('./colors.js')
-const { token } = require('./token.json')
 const { interval, dieOnBoot, allowed } = require('./config.json')
 
 const log = Debug('bot')
@@ -288,7 +287,7 @@ bot.on('message', message => {
         })
 })
 
-bot.login(token)
+bot.login(process.env.token)
 
 // my poor child, sleep well ;w;
 async function itsOver (guild) {
