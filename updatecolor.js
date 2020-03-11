@@ -29,7 +29,7 @@
 const Debug = require('debug')
 const Package = require('./package.json')
 const Axios = require('axios')
-const { token } = require('./token.json')
+const { token } = process.env.token
 const { timeout, userAgent, allowed} = require('./config.json')
 
 const log = Debug('update-color')
